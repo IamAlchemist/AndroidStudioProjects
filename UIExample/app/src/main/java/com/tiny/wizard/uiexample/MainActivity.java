@@ -7,11 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
     private Button popupActivityButton;
     private Button popupWindowButton;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,9 @@ public class MainActivity extends Activity {
 
         popupActivityButton = (Button)findViewById(R.id.btn_popup_activity);
         popupWindowButton = (Button)findViewById(R.id.btn_popup_window);
+        textView = (TextView)findViewById(R.id.text_view);
+
+        textView.setText(com.tiny.wizard.viewlibrary.Util.utilTest());
 
         configUI();
     }
