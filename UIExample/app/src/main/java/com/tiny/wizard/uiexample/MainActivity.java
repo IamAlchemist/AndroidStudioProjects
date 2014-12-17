@@ -12,6 +12,8 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
     private Button popupActivityButton;
     private Button popupWindowButton;
+    private Button sectionListButton;
+
     private TextView textView;
 
     @Override
@@ -21,8 +23,9 @@ public class MainActivity extends Activity {
 
         popupActivityButton = (Button)findViewById(R.id.btn_popup_activity);
         popupWindowButton = (Button)findViewById(R.id.btn_popup_window);
-        textView = (TextView)findViewById(R.id.text_view);
+        sectionListButton = (Button)findViewById(R.id.btn_section_list);
 
+        textView = (TextView)findViewById(R.id.text_view);
         textView.setText(com.tiny.wizard.viewlibrary.Util.utilTest());
 
         configUI();
@@ -41,6 +44,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, PopWindowActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        sectionListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SectionListActivity.class);
                 startActivity(intent);
             }
         });
