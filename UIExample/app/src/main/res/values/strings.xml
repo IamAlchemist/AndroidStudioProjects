@@ -4,6 +4,12 @@
     <string name="app_name">UIExample</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="popup_activity">POPUP ACTIVITY</string>
+    <string name="popup_menu">POPUP MENU</string>
+    <string name="file">file</string>
+    <string name="create_new">new</string>
+    <string name="open">open</string>
+    <string name="menu_archive">archieve</string>
+    <string name="menu_delete">delete</string>
+    <string name="popup_window">POPUP WINDOW</string>
 
 </resources>

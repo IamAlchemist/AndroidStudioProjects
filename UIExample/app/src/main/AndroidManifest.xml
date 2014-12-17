@@ -18,7 +18,10 @@
         </activity>
 
         <activity android:name=".PopMenuActivity"
-            android:label="@string/popup_activity"/>
+            android:label="@string/popup_menu"/>
+
+        <activity android:name=".PopWindowActivity"
+            android:label="@string/popup_window"/>
 
     </application>
 

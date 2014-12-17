@@ -12,9 +12,9 @@ public class PopMenuActivity extends Activity implements PopupMenu.OnMenuItemCli
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup);
+        setContentView(R.layout.activity_popup_menu);
 
-        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.activity_popup_menu_click_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PopupMenu popupMenu = new PopupMenu(PopMenuActivity.this, view);

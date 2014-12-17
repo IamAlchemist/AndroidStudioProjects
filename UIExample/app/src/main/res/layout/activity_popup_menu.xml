@@ -4,7 +4,7 @@
     android:background="#fcfcfc" >
 
     <Button
-        android:id="@+id/btn_click"
+        android:id="@+id/activity_popup_menu_click_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

@@ -11,6 +11,7 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
     private Button popupActivityButton;
+    private Button popupWindowButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         popupActivityButton = (Button)findViewById(R.id.btn_popup_activity);
+        popupWindowButton = (Button)findViewById(R.id.btn_popup_window);
 
         configUI();
     }
@@ -27,6 +29,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, PopMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        popupWindowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PopWindowActivity.class);
                 startActivity(intent);
             }
         });

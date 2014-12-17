@@ -9,13 +9,25 @@
     android:background="#fcfcfc"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_popup_activity"
+    <Button android:id="@+id/btn_popup_activity"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/blue"
-        android:text="@string/popup_activity"
+        android:text="@string/popup_menu"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
         android:textStyle="bold" />
+
+    <Button android:id="@+id/btn_popup_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:text="@string/popup_window"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:layout_below="@+id/btn_popup_activity"
+        />
+
 </RelativeLayout>
