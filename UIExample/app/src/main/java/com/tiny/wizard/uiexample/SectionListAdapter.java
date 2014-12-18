@@ -12,17 +12,17 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public abstract class SectionListAdapter extends BaseAdapter {
-    private Context context;
+    private final Context context;
 
     public SectionListAdapter(Context context){
         this.context = context;
     }
 
-    public final int VIEW_TYPE_CELL = 0;
-    public final int VIEW_TYPE_HEADER = 1;
+    private final int VIEW_TYPE_CELL = 0;
+    private final int VIEW_TYPE_HEADER = 1;
 
     private class InternalIndexPath{
-        IndexPath indexPath;
+        public final IndexPath indexPath;
         int type;
         InternalIndexPath(){
             indexPath = new IndexPath();
@@ -35,11 +35,12 @@ public abstract class SectionListAdapter extends BaseAdapter {
         int section;
     }
 
+    @SuppressWarnings("CanBeFinal")
     public class Padding{
-        int left;
-        int top;
-        int right;
-        int bottom;
+        public int left = 0;
+        public int top = 0;
+        public int right = 0;
+        public int bottom = 0;
     }
 
     public abstract int numberOfRowsInSection(int section);
@@ -58,18 +59,23 @@ public abstract class SectionListAdapter extends BaseAdapter {
     }
 
 
+    @SuppressWarnings({"SameReturnValue", "WeakerAccess", "UnusedParameters"})
     protected View getViewForSectionHeader(int section, View view, ViewGroup viewGroup){
         return null;
     }
+    @SuppressWarnings({"SameReturnValue", "WeakerAccess", "UnusedParameters"})
     protected Padding paddingForHeader(int section){
         return null;
     }
+    @SuppressWarnings({"SameReturnValue", "WeakerAccess", "UnusedParameters"})
     protected ViewGroup.LayoutParams layoutParamsForHeader(int section){
         return null;
     }
+    @SuppressWarnings("UnusedParameters")
     protected String titleForHeaderInSection(int section){
         return "";
     }
+    @SuppressWarnings({"SameReturnValue", "WeakerAccess", "UnusedParameters"})
     protected int sizeOfHeaderText(int section) {
         return 12;
     }
