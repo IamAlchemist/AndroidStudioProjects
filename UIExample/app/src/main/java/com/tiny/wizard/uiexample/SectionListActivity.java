@@ -13,10 +13,7 @@ import java.util.ArrayList;
 
 public class SectionListActivity extends ListActivity{
 
-    private ArrayList<String> mydata1 = new ArrayList<String>();
-    private ArrayList<String> mydata2 = new ArrayList<String>();
-
-    private ArrayList< ArrayList<String>> mydata  = new ArrayList<ArrayList<String>>();
+    private ArrayList< ArrayList<String>> myData = new ArrayList<ArrayList<String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -29,16 +26,15 @@ public class SectionListActivity extends ListActivity{
     }
 
     private void generateData() {
-        for(int i = 0; i < 20; ++i){
-            mydata1.add("item" + i);
-        }
+        for (int j = 0; j < 3; ++j){
+            ArrayList<String> data = new ArrayList<String>();
 
-        for(int i = 20; i > 0; --i){
-            mydata2.add("item" + i);
-        }
+            for(int i = 0; i < 20; ++i){
+                data.add("item" + i);
+            }
 
-        mydata.add(mydata1);
-        mydata.add(mydata2);
+            myData.add(data);
+        }
     }
 
 
@@ -50,12 +46,12 @@ public class SectionListActivity extends ListActivity{
 
         @Override
         public int numberOfRowsInSection(int section) {
-            return mydata.get(section).size();
+            return myData.get(section).size();
         }
 
         @Override
         public int numberOfSections() {
-            return mydata.size();
+            return myData.size();
         }
 
         @Override
@@ -66,14 +62,14 @@ public class SectionListActivity extends ListActivity{
             }
 
             TextView textView = (TextView)view.findViewById(R.id.row_section_list_text);
-            textView.setText(mydata.get(indexPath.section).get(indexPath.row));
+            textView.setText(myData.get(indexPath.section).get(indexPath.row));
 
             return view;
         }
 
         @Override
         public String titleForHeaderInSection(int section){
-            return "section" + section;
+            return "SECTION" + section;
         }
     }
 }

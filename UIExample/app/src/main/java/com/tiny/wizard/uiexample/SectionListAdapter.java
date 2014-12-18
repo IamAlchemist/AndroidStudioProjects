@@ -4,6 +4,7 @@ package com.tiny.wizard.uiexample;
 // Support single type of cell view and single type of header - v0.1
 
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,13 @@ public abstract class SectionListAdapter extends BaseAdapter {
         int section;
     }
 
+    public class Padding{
+        int left;
+        int top;
+        int right;
+        int bottom;
+    }
+
     public abstract int numberOfRowsInSection(int section);
     public abstract int numberOfSections();
     public abstract View getViewForIndexPath(IndexPath indexPath, View view, ViewGroup viewGroup);
@@ -49,25 +57,21 @@ public abstract class SectionListAdapter extends BaseAdapter {
         return internalIndexPath.type;
     }
 
-    public int heightForRow(IndexPath indexPath){
-        return 44;
-    }
-    public int heightForHeaderInSection(int section) {
-        return 44;
-    }
-    public int heightForFooterInSection(int section){
-        return 44;
-    }
 
-    public String titleForHeaderInSection(int section){
-        return "";
-    }
-    public String titleForFooterInSection(int section){
-        return "";
-    }
-
-    public View getViewForSectionHeader(int section, View view, ViewGroup viewGroup){
+    protected View getViewForSectionHeader(int section, View view, ViewGroup viewGroup){
         return null;
+    }
+    protected Padding paddingForHeader(int section){
+        return null;
+    }
+    protected ViewGroup.LayoutParams layoutParamsForHeader(int section){
+        return null;
+    }
+    protected String titleForHeaderInSection(int section){
+        return "";
+    }
+    protected int sizeOfHeaderText(int section) {
+        return 12;
     }
 
     @Override
@@ -119,14 +123,26 @@ public abstract class SectionListAdapter extends BaseAdapter {
 
         if(view != null)
             headerView = view;
-        else
-            headerView = LayoutInflater.from(context).inflate(android.R.layout.simple_list_item_1, viewGroup, false);
+        else {
+            headerView = LayoutInflater.from(context).inflate(R.layout.section_header, viewGroup, false);
+        }
 
-        TextView textView = (TextView)headerView.findViewById(android.R.id.text1);
+        ViewGroup.LayoutParams layoutParams = layoutParamsForHeader(section);
+        if(layoutParams != null)
+            headerView.setLayoutParams(layoutParams);
+
+        TextView textView = (TextView)headerView.findViewById(R.id.section_list_section_header);
+        Padding padding = paddingForHeader(section);
+        if(padding != null){
+            textView.setPadding(padding.left, padding.top, padding.right, padding.bottom);
+        }
+
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, sizeOfHeaderText(section));
         textView.setText(titleForHeaderInSection(section));
 
         return headerView;
     }
+
 
     private InternalIndexPath indexPathFromPosition(int position){
         InternalIndexPath internalIndexPath = new InternalIndexPath();
@@ -145,7 +161,8 @@ public abstract class SectionListAdapter extends BaseAdapter {
                     internalIndexPath.indexPath.section = sectionIndex;
                     internalIndexPath.indexPath.row = position - 1;
                     internalIndexPath.type = getTypeOfIndexPath(internalIndexPath.indexPath);
-            }
+                    break;
+                }
                 else{
                     position -= numberOfRowsInSection + 1;
                 }
