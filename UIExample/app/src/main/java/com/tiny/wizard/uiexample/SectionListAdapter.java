@@ -12,7 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public abstract class SectionListAdapter extends BaseAdapter {
-    private final Context context;
+    protected final Context context;
 
     public SectionListAdapter(Context context){
         this.context = context;

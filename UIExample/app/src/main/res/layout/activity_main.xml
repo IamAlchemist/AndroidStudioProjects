@@ -29,4 +29,10 @@
         style="@style/button_in_main_activity"
         android:text="@string/section_list"
         android:layout_below="@+id/text_view"/>
+
+    <Button android:id="@+id/btn_custom_section_list"
+        style="@style/button_in_main_activity"
+        android:text="@string/custom_section_list"
+        android:layout_below="@+id/btn_section_list"/>
+
 </RelativeLayout>

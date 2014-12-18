@@ -1,5 +1,5 @@
 package com.tiny.wizard.uiexample;
-// Created by wizard on 12/17/14.
+// Created by wizard on 12/18/14.
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -11,13 +11,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SectionListActivity extends ListActivity{
+public class CustomSectionActivity extends ListActivity {
 
     private ArrayList<ArrayList<String>> myData = new ArrayList<ArrayList<String>>();
     private ArrayList<String> sectionTitles = new ArrayList<String>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_list);
 
@@ -39,9 +39,7 @@ public class SectionListActivity extends ListActivity{
         }
     }
 
-
-    private class MyAdapter extends SectionListAdapter{
-
+    private class MyAdapter extends SectionListAdapter {
         public MyAdapter(Context context) {
             super(context);
         }
@@ -59,7 +57,7 @@ public class SectionListActivity extends ListActivity{
         @Override
         public View getViewForIndexPath(IndexPath indexPath, View view, ViewGroup viewGroup) {
             if(view == null){
-                LayoutInflater inflater = LayoutInflater.from(SectionListActivity.this);
+                LayoutInflater inflater = LayoutInflater.from(CustomSectionActivity.this);
                 view = inflater.inflate(R.layout.row_section_list, viewGroup, false);
             }
 
@@ -70,8 +68,15 @@ public class SectionListActivity extends ListActivity{
         }
 
         @Override
-        public String titleForHeaderInSection(int section){
-            return "-- " + sectionTitles.get(section) + " --";
+        protected View getViewForSectionHeader(int section, View view, ViewGroup viewGroup){
+            if(view == null){
+                view = LayoutInflater.from(context).inflate(R.layout.section_header, viewGroup, false);
+            }
+
+            TextView textView = (TextView)view.findViewById(R.id.section_list_section_header);
+            textView.setText(sectionTitles.get(section));
+
+            return view;
         }
     }
 }

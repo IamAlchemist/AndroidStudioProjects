@@ -10,9 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    private Button popupActivityButton;
-    private Button popupWindowButton;
-    private Button sectionListButton;
 
     private TextView textView;
 
@@ -21,10 +18,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        popupActivityButton = (Button)findViewById(R.id.btn_popup_activity);
-        popupWindowButton = (Button)findViewById(R.id.btn_popup_window);
-        sectionListButton = (Button)findViewById(R.id.btn_section_list);
-
         textView = (TextView)findViewById(R.id.text_view);
         textView.setText(com.tiny.wizard.viewlibrary.Util.utilTest());
 
@@ -32,7 +25,10 @@ public class MainActivity extends Activity {
     }
 
     private void configUI() {
-        popupActivityButton.setOnClickListener(new View.OnClickListener() {
+        Button button;
+
+        button = (Button)findViewById(R.id.btn_popup_activity);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, PopMenuActivity.class);
@@ -40,7 +36,8 @@ public class MainActivity extends Activity {
             }
         });
 
-        popupWindowButton.setOnClickListener(new View.OnClickListener() {
+        button = (Button)findViewById(R.id.btn_popup_window);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, PopWindowActivity.class);
@@ -48,10 +45,20 @@ public class MainActivity extends Activity {
             }
         });
 
-        sectionListButton.setOnClickListener(new View.OnClickListener() {
+        button = (Button)findViewById(R.id.btn_section_list);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SectionListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button = (Button)findViewById(R.id.btn_custom_section_list);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CustomSectionActivity.class);
                 startActivity(intent);
             }
         });

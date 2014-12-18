@@ -26,6 +26,9 @@
         <activity android:name=".SectionListActivity"
             android:label="@string/section_list"/>
 
+        <activity android:name=".CustomSectionActivity"
+            android:label="@string/custom_section_list"/>
+
     </application>
 
 </manifest>
