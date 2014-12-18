@@ -27,6 +27,6 @@
 
     <Button android:id="@+id/btn_section_list"
         style="@style/button_in_main_activity"
-        android:text="@string/popup_window"
+        android:text="@string/section_list"
         android:layout_below="@+id/text_view"/>
 </RelativeLayout>

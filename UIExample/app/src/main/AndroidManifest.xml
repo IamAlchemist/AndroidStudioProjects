@@ -23,6 +23,9 @@
         <activity android:name=".PopWindowActivity"
             android:label="@string/popup_window"/>
 
+        <activity android:name=".SectionListActivity"
+            android:label="@string/section_list"/>
+
     </application>
 
 </manifest>
