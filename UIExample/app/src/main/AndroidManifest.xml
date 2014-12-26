@@ -29,6 +29,9 @@
         <activity android:name=".CustomSectionActivity"
             android:label="@string/custom_section_list"/>
 
+        <activity android:name=".CircleBarActivity"
+            android:label="@string/circle_progress_bar"/>
+
     </application>
 
 </manifest>

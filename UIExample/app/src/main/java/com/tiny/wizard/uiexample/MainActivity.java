@@ -77,4 +77,9 @@ public class MainActivity extends Activity {
 
         return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
+
+    public void showCircleBar(View view) {
+        Intent intent = new Intent(MainActivity.this, CircleBarActivity.class);
+        startActivity(intent);
+    }
 }

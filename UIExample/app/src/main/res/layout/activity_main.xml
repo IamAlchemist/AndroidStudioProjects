@@ -35,4 +35,10 @@
         android:text="@string/custom_section_list"
         android:layout_below="@+id/btn_section_list"/>
 
+    <Button android:id="@+id/btn_circle_progress_bar"
+        style="@style/button_in_main_activity"
+        android:text="@string/circle_progress_bar"
+        android:layout_below="@+id/btn_custom_section_list"
+        android:onClick="showCircleBar"/>
+
 </RelativeLayout>
