@@ -15,5 +15,8 @@
     <string name="section_list">SECTION LIST</string>
     <string name="custom_section_list">CUSTOM SECTION</string>
     <string name="circle_progress_bar">CIRCLE PROGRESS BAR</string>
+    <string name="navigation_tab_bar">NAV TAB</string>
+    <string name="artist">artist</string>
+    <string name="album">album</string>
 
 </resources>

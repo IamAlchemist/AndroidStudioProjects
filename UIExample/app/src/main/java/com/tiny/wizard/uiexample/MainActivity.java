@@ -31,8 +31,7 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PopMenuActivity.class);
-                startActivity(intent);
+                startActivity(PopMenuActivity.class);
             }
         });
 
@@ -40,8 +39,7 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PopWindowActivity.class);
-                startActivity(intent);
+                startActivity(PopWindowActivity.class);
             }
         });
 
@@ -49,8 +47,7 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SectionListActivity.class);
-                startActivity(intent);
+                startActivity(SectionListActivity.class);
             }
         });
 
@@ -58,12 +55,15 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CustomSectionActivity.class);
-                startActivity(intent);
+                startActivity(CustomSectionActivity.class);
             }
         });
     }
 
+    public void startActivity(Class<? extends Activity> activityClass) {
+        Intent intent = new Intent(this, activityClass);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,12 +74,14 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
     public void showCircleBar(View view) {
-        Intent intent = new Intent(MainActivity.this, CircleBarActivity.class);
-        startActivity(intent);
+        startActivity(CircleBarActivity.class);
+    }
+
+    public void showNavTab(View view) {
+        startActivity(NavTabActivity.class);
     }
 }

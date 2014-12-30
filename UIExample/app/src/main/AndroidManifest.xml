@@ -32,6 +32,9 @@
         <activity android:name=".CircleBarActivity"
             android:label="@string/circle_progress_bar"/>
 
+        <activity android:name=".NavTabActivity"
+            android:label="@string/navigation_tab_bar"/>
+
     </application>
 
 </manifest>

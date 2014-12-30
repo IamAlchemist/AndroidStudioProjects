@@ -1,44 +1,56 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="#fcfcfc"
-    tools:context=".MainActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <Button android:id="@+id/btn_popup_activity"
-        style="@style/button_in_main_activity"
-        android:text="@string/popup_menu"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:background="#fcfcfc"
+        tools:context=".MainActivity">
 
-    <Button android:id="@+id/btn_popup_window"
-        style="@style/button_in_main_activity"
-        android:text="@string/popup_window"
-        android:layout_below="@+id/btn_popup_activity"
-        />
+        <Button android:id="@+id/btn_popup_activity"
+            style="@style/button_in_main_activity"
+            android:text="@string/popup_menu"/>
 
-    <TextView android:id="@+id/text_view"
-        style="@style/button_in_main_activity"
-        android:gravity="center"
-        android:text="@string/test_string"
-        android:layout_below="@+id/btn_popup_window"/>
+        <Button android:id="@+id/btn_popup_window"
+            style="@style/button_in_main_activity"
+            android:text="@string/popup_window"
+            android:layout_below="@+id/btn_popup_activity"
+            />
 
-    <Button android:id="@+id/btn_section_list"
-        style="@style/button_in_main_activity"
-        android:text="@string/section_list"
-        android:layout_below="@+id/text_view"/>
+        <TextView android:id="@+id/text_view"
+            style="@style/button_in_main_activity"
+            android:gravity="center"
+            android:text="@string/test_string"
+            android:layout_below="@+id/btn_popup_window"/>
 
-    <Button android:id="@+id/btn_custom_section_list"
-        style="@style/button_in_main_activity"
-        android:text="@string/custom_section_list"
-        android:layout_below="@+id/btn_section_list"/>
+        <Button android:id="@+id/btn_section_list"
+            style="@style/button_in_main_activity"
+            android:text="@string/section_list"
+            android:layout_below="@+id/text_view"/>
 
-    <Button android:id="@+id/btn_circle_progress_bar"
-        style="@style/button_in_main_activity"
-        android:text="@string/circle_progress_bar"
-        android:layout_below="@+id/btn_custom_section_list"
-        android:onClick="showCircleBar"/>
+        <Button android:id="@+id/btn_custom_section_list"
+            style="@style/button_in_main_activity"
+            android:text="@string/custom_section_list"
+            android:layout_below="@+id/btn_section_list"/>
 
-</RelativeLayout>
+        <Button android:id="@+id/btn_circle_progress_bar"
+            style="@style/button_in_main_activity"
+            android:text="@string/circle_progress_bar"
+            android:layout_below="@+id/btn_custom_section_list"
+            android:onClick="showCircleBar"/>
+
+        <Button android:id="@+id/btn_navigation_tab_bar"
+            style="@style/button_in_main_activity"
+            android:text="@string/navigation_tab_bar"
+            android:layout_below="@+id/btn_circle_progress_bar"
+            android:onClick="showNavTab"/>
+
+    </RelativeLayout>
+
+</ScrollView>
