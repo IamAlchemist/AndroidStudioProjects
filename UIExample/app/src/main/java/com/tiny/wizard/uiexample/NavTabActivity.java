@@ -22,6 +22,8 @@ public class NavTabActivity extends Activity{
                 .setText(R.string.artist)
                 .setTabListener(new TabListener<ArtistFragment>(
                         this, "artist", ArtistFragment.class));
+        tab.setIcon(R.drawable.ic_launcher);
+        tab.setCustomView(R.layout.view_custom_tab);
         actionBar.addTab(tab);
 
         tab = actionBar.newTab()
