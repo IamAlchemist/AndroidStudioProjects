@@ -35,6 +35,9 @@
         <activity android:name=".NavTabActivity"
             android:label="@string/navigation_tab_bar"/>
 
+        <activity android:name=".WheelIndicatorActivity"
+            android:label="@string/wheel_indicator"/>
+
     </application>
 
 </manifest>

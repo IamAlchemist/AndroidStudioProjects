@@ -18,5 +18,6 @@
     <string name="navigation_tab_bar">NAV TAB</string>
     <string name="artist">artist</string>
     <string name="album">album</string>
+    <string name="wheel_indicator">WHEEL INDICATOR</string>
 
 </resources>

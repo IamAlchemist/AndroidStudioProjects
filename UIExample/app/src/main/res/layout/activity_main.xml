@@ -51,6 +51,12 @@
             android:layout_below="@+id/btn_circle_progress_bar"
             android:onClick="showNavTab"/>
 
+        <Button android:id="@+id/btn_wheel_indicator"
+            style="@style/button_in_main_activity"
+            android:text="@string/wheel_indicator"
+            android:layout_below="@+id/btn_circle_progress_bar"
+            android:onClick="showWheelIndicator"/>
+
     </RelativeLayout>
 
 </ScrollView>

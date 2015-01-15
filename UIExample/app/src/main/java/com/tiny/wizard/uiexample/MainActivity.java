@@ -84,4 +84,8 @@ public class MainActivity extends Activity {
     public void showNavTab(View view) {
         startActivity(NavTabActivity.class);
     }
+
+    public void showWheelIndicator(View view) {
+        startActivity(WheelIndicatorActivity.class);
+    }
 }
