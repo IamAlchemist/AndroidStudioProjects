@@ -1,8 +1,9 @@
 package com.tiny.wizard.samplebasic;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,8 +40,16 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void showImplicitIntent(View view) {
-        Intent intent = new Intent(this, ImplicitIntentActivity.class);
+    private void startActivity(Class<? extends Activity> activityClass){
+        Intent intent = new Intent(this, activityClass);
         startActivity(intent);
+    }
+
+    public void showImplicitIntent(View view) {
+        startActivity(ImplicitIntentActivity.class);
+    }
+
+    public void showActivityWithFlag(View view) {
+        startActivity(TaskFlagActivity.class);
     }
 }

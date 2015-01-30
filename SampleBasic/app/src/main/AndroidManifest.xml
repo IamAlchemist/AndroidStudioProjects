@@ -23,6 +23,9 @@
         <activity android:name=".ImplicitIntentActivity"
             android:label="@string/show_implicit_intent"/>
 
+        <activity android:name=".TaskFlagActivity"
+            android:label="@string/show_task_and_activity"/>
+
     </application>
 
 </manifest>

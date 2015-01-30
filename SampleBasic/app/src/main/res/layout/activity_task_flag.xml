@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_task_flag_content"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button android:onClick="showActivityWithFlagNewTask"
+        android:text="flat with new task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:onClick="showActivityWithFlagClearTop"
+        android:text="flat with clear top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:onClick="showActivityWithFlagSingleTop"
+        android:text="flat with single top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:onClick="showActivityWithNoFlag"
+        android:text="no flag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/activity_task_flag_text"
+        android:gravity="center"
+        android:text="test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/activity_task_flag_text_new"
+        android:gravity="center"
+        android:text="test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
