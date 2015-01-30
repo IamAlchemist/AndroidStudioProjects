@@ -28,6 +28,15 @@ public class TaskFlagActivity extends Activity{
         ((TextView)findViewById(R.id.activity_task_flag_text_new)).setText("NEW LAST INDEX : " + intent.getIntExtra("index", -2));
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(index%colors.length == 0){
+            setContentView(R.layout.activity_task_flag_2);
+        }
+    }
+
+
     public void showActivityWithFlagNewTask(View view) {
         startActivityWithFlag(Intent.FLAG_ACTIVITY_NEW_TASK);
     }
