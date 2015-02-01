@@ -1,43 +1,55 @@
 package com.tiny.wizard.samplebasic;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.SimpleAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setListAdapter(new SimpleAdapter(this, getData(),
+                android.R.layout.simple_list_item_1, new String[] {"title"},
+                new int[] { android.R.id.text1 }));
     }
 
+    private List<Map<String, Object>> getData() {
+        List<Map<String, Object>> myData = new ArrayList<>();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_SAMPLE_CODE);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        PackageManager pm = getPackageManager();
+        List<ResolveInfo> resolveInfos = pm.queryIntentActivities(mainIntent, 0);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        for(ResolveInfo resolveInfo : resolveInfos){
+            CharSequence labelSequence = resolveInfo.loadLabel(pm);
+            String label = labelSequence == null ?
+                    resolveInfo.activityInfo.name : labelSequence.toString();
+
+            Map<String, Object> entries = new HashMap<>();
+            Intent intent = new Intent();
+            intent.setClassName(resolveInfo.activityInfo.applicationInfo.packageName,
+                    resolveInfo.activityInfo.name);
+            entries.put("title", label);
+            entries.put("intent", intent);
+
+            myData.add(entries);
         }
 
-        return super.onOptionsItemSelected(item);
+        return myData;
     }
 
     private void startActivity(Class<? extends Activity> activityClass){

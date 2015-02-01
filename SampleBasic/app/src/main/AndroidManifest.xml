@@ -21,10 +21,20 @@
         </activity>
 
         <activity android:name=".ImplicitIntentActivity"
-            android:label="@string/show_implicit_intent"/>
+            android:label="@string/show_implicit_intent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
 
         <activity android:name=".TaskFlagActivity"
-            android:label="@string/show_task_and_activity"/>
+            android:label="@string/show_task_and_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
 
     </application>
 
