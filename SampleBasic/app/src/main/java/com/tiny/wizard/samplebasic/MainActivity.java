@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -63,5 +64,13 @@ public class MainActivity extends ListActivity {
 
     public void showActivityWithFlag(View view) {
         startActivity(TaskFlagActivity.class);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id){
+        Map<String, Object> map = (Map<String, Object>)l.getItemAtPosition(position);
+        Intent intent = (Intent)map.get("intent");
+        startActivity(intent);
     }
 }
