@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="show_implicit_intent">IMPLICIT INTENT</string>
     <string name="show_task_and_activity">TASK AND ACTIVITY</string>
+    <string name="sample_basic_action">com.tiny.wizard.samplebasic.SAMPLE_BASIC</string>
 
 </resources>

@@ -28,11 +28,11 @@ public class MainActivity extends ListActivity {
     private List<Map<String, Object>> getData() {
         List<Map<String, Object>> myData = new ArrayList<>();
 
-        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
-        mainIntent.addCategory(Intent.CATEGORY_SAMPLE_CODE);
+        Intent intentWithCustomAction = new Intent();
+        intentWithCustomAction.setAction(getResources().getString(R.string.sample_basic_action));
 
         PackageManager pm = getPackageManager();
-        List<ResolveInfo> resolveInfos = pm.queryIntentActivities(mainIntent, 0);
+        List<ResolveInfo> resolveInfos = pm.queryIntentActivities(intentWithCustomAction, 0);
 
         for(ResolveInfo resolveInfo : resolveInfos){
             CharSequence labelSequence = resolveInfo.loadLabel(pm);
