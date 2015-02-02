@@ -8,4 +8,6 @@
     <string name="show_task_and_activity">TASK AND ACTIVITY</string>
     <string name="sample_basic_action">com.tiny.wizard.samplebasic.SAMPLE_BASIC</string>
 
+    <string name="service_simple_binder_activity">SERVICE/SIMPLE_BINDER</string>
+
 </resources>
