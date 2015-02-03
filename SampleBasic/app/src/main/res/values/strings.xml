@@ -9,5 +9,7 @@
     <string name="sample_basic_action">com.tiny.wizard.samplebasic.SAMPLE_BASIC</string>
 
     <string name="service_simple_binder_activity">SERVICE/SIMPLE_BINDER</string>
+    <string name="test_string">test</string>
+    <string name="get_random_number">GET RANDOM NUMBER</string>
 
 </resources>
