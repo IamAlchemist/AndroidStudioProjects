@@ -1,10 +1,9 @@
 package com.tiny.wizard.samplebasic;
 // Created by wizard on 2/3/15.
 
-import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
@@ -32,34 +31,17 @@ public class MessengerService extends Service {
     public void onCreate(){
         super.onCreate();
 
-        notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        showNotification();
+        notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        Util.showNotification(this, R.string.messenger_service_started, notificationManager);
     }
 
     @Override
     public void onDestroy(){
-        notificationManager.cancel(R.string.remote_service_started);
+        notificationManager.cancel(R.string.messenger_service_started);
 
         super.onDestroy();
     }
 
-    private void showNotification() {
-        CharSequence text = getText(R.string.remote_service_started);
-
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, NotificationActivity.class), 0);
-
-        Notification notification = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher)
-                .setContentText(text)
-                .setWhen(System.currentTimeMillis())
-                .setContentIntent(contentIntent)
-                .setContentTitle(getText(R.string.notification_sample_activity))
-                .setTicker(text)
-                .build();
-
-        notificationManager.notify(R.string.remote_service_started, notification);
-    }
 
     final Messenger messenger = new Messenger(new IncomingHandler());
 

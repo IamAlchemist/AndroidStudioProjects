@@ -16,4 +16,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <TextView android:id="@+id/bind_service_pid_text"
+        android:layout_below="@id/bind_service_text"
+        android:text="@string/test_string"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

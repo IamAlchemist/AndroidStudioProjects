@@ -51,6 +51,25 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".RemoteService" android:process=":remote">
+            <intent-filter>
+                <!-- These are the interfaces supported by the service, which
+                     you can bind to. -->
+                <action android:name="com.tiny.wizard.samplebasic.IRemoteService" />
+                <action android:name="com.tiny.wizard.samplebasic.IRemoteServiceSecond" />
+                <!-- This is an action code you can use to select the service
+                     without explicitly supplying the implementation class. -->
+                <action android:name="com.tiny.wizard.samplebasic.REMOTE_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".AIDLBindServiceActivity"
+            android:label="@string/aidl_bind_service_activity">
+            <intent-filter>
+                <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
+            </intent-filter>
+        </activity>
+
         <activity android:name=".NotificationActivity"
             android:label="@string/notification_sample_activity"/>
 
