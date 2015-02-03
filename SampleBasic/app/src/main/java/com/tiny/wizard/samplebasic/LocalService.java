@@ -6,11 +6,8 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 
-import java.util.Random;
-
 public class LocalService extends Service {
     private final IBinder binder = new LocalBinder();
-    private final Random generator = new Random();
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -24,6 +21,6 @@ public class LocalService extends Service {
     }
 
     public int getRandomNumber(){
-        return generator.nextInt(100);
+        return Util.randomNumber(100);
     }
 }

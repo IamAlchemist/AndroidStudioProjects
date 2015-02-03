@@ -33,6 +33,8 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".LocalService" android:stopWithTask="true"/>
+
         <activity android:name=".BindServiceActivity"
             android:label="@string/service_simple_binder_activity">
             <intent-filter>
@@ -40,7 +42,17 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".LocalService" android:stopWithTask="true"/>
+        <service android:name=".MessengerService" android:process=":remote"/>
+
+        <activity android:name=".MessengerBindServiceActivity"
+            android:label="@string/service_messenger_bind_activity">
+            <intent-filter>
+                <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".NotificationActivity"
+            android:label="@string/notification_sample_activity"/>
 
     </application>
 
