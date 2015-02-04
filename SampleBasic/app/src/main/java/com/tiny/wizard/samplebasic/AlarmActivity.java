@@ -14,10 +14,10 @@ public class AlarmActivity extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alarm);
+        setContentView(R.layout.activity_receiver);
     }
 
-    public void alarmBroadcast(View view) {
+    public void sendBroadcast(View view) {
         Intent intent = new Intent(this, OneShotAlarm.class);
         PendingIntent sender = PendingIntent.getBroadcast(this, 0, intent, 0);
 

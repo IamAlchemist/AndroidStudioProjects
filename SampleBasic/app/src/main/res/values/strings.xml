@@ -5,6 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="message">MESSAGE</string>
+
+    <string name="one_shot_alarm_gone">the one-shot alarm has gone off</string>
     <string name="messenger_service_started">Messenger Service has started</string>
     <string name="remote_service_started">Remote Service has started</string>
     <string name="sample_basic_action">com.tiny.wizard.samplebasic.SAMPLE_BASIC</string>
@@ -18,7 +21,7 @@
     <string name="service_simple_binder_activity">SERVICE/SIMPLE_BINDER</string>
     <string name="service_messenger_bind_activity">SERVICE/MESSENGER_BINDER</string>
     <string name="aidl_bind_service_activity">SERVICE/AIDL_BINDER</string>
-    <string name="alarm_receiver_activity">ALARM_RECEIVER</string>
-    <string name="one_shot_alarm_gone">the one-shot alarm has gone off</string>
+    <string name="alarm_receiver_activity">RECEIVER/ALARM_RECEIVER</string>
+    <string name="broadcast_receiver_activity">RECEIVER/BROADCAST_RECEIVER</string>
 
 </resources>

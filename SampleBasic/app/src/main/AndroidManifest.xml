@@ -81,6 +81,18 @@
 
         <receiver android:name=".OneShotAlarm" android:process=":remote"/>
 
+        <activity android:name=".BroadcastActivity" android:label="@string/broadcast_receiver_activity">
+            <intent-filter>
+                <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".FilterReceiver" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
