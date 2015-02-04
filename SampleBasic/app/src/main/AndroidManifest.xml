@@ -9,6 +9,9 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
 
+        <activity android:name=".NotificationActivity"
+            android:label="@string/notification_sample_activity"/>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -70,8 +73,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NotificationActivity"
-            android:label="@string/notification_sample_activity"/>
+        <activity android:name=".AlarmActivity" android:label="@string/alarm_receiver_activity">
+            <intent-filter>
+                <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".OneShotAlarm" android:process=":remote"/>
 
     </application>
 

@@ -18,5 +18,7 @@
     <string name="service_simple_binder_activity">SERVICE/SIMPLE_BINDER</string>
     <string name="service_messenger_bind_activity">SERVICE/MESSENGER_BINDER</string>
     <string name="aidl_bind_service_activity">SERVICE/AIDL_BINDER</string>
+    <string name="alarm_receiver_activity">ALARM_RECEIVER</string>
+    <string name="one_shot_alarm_gone">the one-shot alarm has gone off</string>
 
 </resources>
