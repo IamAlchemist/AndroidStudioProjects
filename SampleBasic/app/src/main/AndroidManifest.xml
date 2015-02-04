@@ -3,6 +3,8 @@
     package="com.tiny.wizard.samplebasic" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
 
     <application android:name="SampleBasicApplication"
         android:allowBackup="true"
@@ -92,6 +94,13 @@
                 <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
             </intent-filter>
         </receiver>
+
+        <activity android:name=".LoaderCursorActivity"
+            android:label="@string/loader_cursor_activity">
+            <intent-filter>
+                <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
+            </intent-filter>
+        </activity>
 
     </application>
 

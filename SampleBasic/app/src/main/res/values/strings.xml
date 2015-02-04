@@ -23,5 +23,6 @@
     <string name="aidl_bind_service_activity">SERVICE/AIDL_BINDER</string>
     <string name="alarm_receiver_activity">RECEIVER/ALARM_RECEIVER</string>
     <string name="broadcast_receiver_activity">RECEIVER/BROADCAST_RECEIVER</string>
+    <string name="loader_cursor_activity">Loader/Cursor</string>
 
 </resources>
