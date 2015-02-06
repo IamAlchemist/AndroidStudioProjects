@@ -102,6 +102,13 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".LoaderCustomActivity"
+            android:label="@string/loader_custom_activity">
+            <intent-filter>
+                <action android:name="com.tiny.wizard.samplebasic.SAMPLE_BASIC"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
